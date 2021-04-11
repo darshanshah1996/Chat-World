@@ -1,0 +1,63 @@
+
+.loginCard__userlogin--form{
+	
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	
+
+}
+
+.loginCard__header{
+
+    text-align: center;
+	
+	
+}
+label{
+	 font-weight: 600;
+}
+input{
+	border-radius: 10px;
+ outline: none;
+ border: 1px solid black;
+ padding: 0.25em 0.5em;
+ background: rgba(255,255,255,0.7);
+ border: 1px  solid gray;
+}
+
+
+
+.loginSubmit{
+
+	margin-top: 1.5em;
+   padding: 0.5em 0.5em;
+   border-radius: 10px;
+   border: 1px solid gray;
+   background-color: #2e5cb8;
+   opacity: 0.5;
+
+
+  
+    align-self: center;
+}
+.loginCard__header--registerlink,.loginCard__header--reset{
+	cursor: pointer;
+	list-style: none;
+	
+	color: white;
+	text-decoration: underline;
+	
+}
+.loginCard__header--registerlink{
+	margin-top: 1.5em;
+   text-align: center;
+}
+.warning{
+	border: 1px solid  #4d4dff !important;
+}
+.warningMessage{
+	color: white;
+	font-size: 0.8rem;
+	font-weight: bold;
+}

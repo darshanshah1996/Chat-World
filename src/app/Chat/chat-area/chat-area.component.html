@@ -1,0 +1,29 @@
+<div class="chatArea" [ngClass]="{'chatAreaHide':laodingIndicator}">
+	<div class="chatArea__message" #chatArea >
+		<div class="messages" *ngFor="let message of messages" [ngClass]="{'messageUser':message.name!==currentUser}">
+			<p class="message__imessage">{{message.message}}</p>
+			<p class="message__timestamp">{{message.time|date :'dd-MM-yy HH:mm' }}</p>
+			
+		</div>
+		
+	
+		<!-- -->
+	</div>
+	<form class="chatArea__input"  (ngSubmit)="sendMessage(chatForm)"   #chatForm=ngForm>
+		<div class="chatArea__input--wrapper">
+		<input type="text" required class="chatArea__input--text" name="chatText" ngModel #chatText="ngModel" placeholder="Type a message ..." autocomplete="off" maxlength="70"
+		[disabled]="inputStatus" >
+	<button class="emojiDisp" type="button" (click)="showEmoji()" #getEmoji>
+               <i class="far fa-smile" #getEmoji1 title="Emoji"></i>
+               <div class="emojiList"  *ngIf="showEmojiStatus">
+                      <p (click)="selectedEmoji(ref)" *ngFor="let emoji of emojiList;let i=index" class="emoji" [innerHTML]="emoji" #ref></p>
+               </div>
+               
+  </button>
+  </div>
+		
+		<button class="chatArea__input--submit" [disabled]="chatForm.invalid || inputStatus" type="submit" ><i class="far fa-paper-plane "></i></button>
+	</form>
+</div>
+	<app-loading-specific class="loadingSpinner"   *ngIf="laodingIndicator" [spinnerClass]="'ldio-q9tbp963vv1'" ></app-loading-specific>
+

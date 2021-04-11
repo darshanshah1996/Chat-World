@@ -1,0 +1,56 @@
+<div class="blog">
+	<div class="blog__header">
+		<button class="blog__header--profile" (click)="showProfile()" ><img  class="blog__header--profile--image" src="{{userImageURL}}" ></button>
+	</div>
+<div class="blogScreen">
+	<div class="blogInfo">
+			<h2 class="blogInfo--header">Blog</h2>
+			<hr>
+			<p class="blogInfo--messagge">Post something thats on your mind</p>
+		</div>
+
+	<div class="blogArea__wrapper">
+
+		 <div class="blogArea"  #blogArea>
+		 	<div class="blogs" *ngFor="let post of postStack;let i=index">
+		 		 <!--<div class="blogs__header">
+		 		 	<img class="blogs__header--image" src="{{post['url']}}" >
+		 		 	<p class="blogs__header--name">{{post['name']}}</p>
+		 		 </div>
+		 		 <div class="blogs__body">
+		 		 	<p class="blogs__body--message">{{post['message']}}</p>
+		 		 	 <p class="blogs__body--time">{{post['times']|date :'dd-MM-yy HH:mm'}}</p> 
+		 		 </div>-->
+		 		 <div class="blogs__imageWrapper">
+		 		 	<img src="{{post['url']}}" class="blogs__image">
+		 		 </div>
+		 		 <div class="blogs__bodyWrapper">
+		 		 	<p class="blogs__body--Name">{{post['name']}} <span class="blogs__body--timestamp">{{post['times']|date :'dd-MM HH:mm'}}</span></p>
+		 		 	<p class="blogs__body--Message">{{post['message']}}</p>
+		 		 </div>
+
+		 	</div>
+		 </div>
+		 <form  (ngSubmit)="post(blogForm)" #blogForm=ngForm class="blogAreaInput">
+		 	<div class="blogArea__Input--wrapper">
+		 	<input required type="text" class="blogAreaInput--text" autocomplete="off" maxlength="150" ngModel name="blogs" placeholder="Tye a post...." 
+		 	[disabled]="inputStatus" >
+		 	<button class="emojiDisp" type="button" (click)="showEmoji()" #getEmoji>
+               <i class="far fa-smile" #getEmoji1 title="Emoji"></i>
+               <div class="emojiList"  *ngIf="showEmojiStatus">
+                      <p (click)="selectedEmoji(ref)" *ngFor="let emoji of emojiList;let i=index" class="emoji" [innerHTML]="emoji" #ref></p>
+               </div>
+               
+            </button>
+           </div> 
+		 	<button class="blogArea__input--submit" [disabled]="blogForm.invalid || inputStatus" type="submit" ><i class="far fa-paper-plane "></i></button>
+
+		 </form >
+	<app-loading-specific class="loadingSpinner" *ngIf="loadingIndicator" [spinnerClass]="'ldio-q9tbp963vv1'" [spinnerBlog]="true"></app-loading-specific>
+	</div>
+	
+	
+</div>	
+</div>
+
+<!--<app-loading-specific class="loadingSpinner" *ngIf="loadingIndicator" [spinnerClass]="'ldio-q9tbp963vv1'" [spinnerBlog]="true"></app-loading-specific>-->

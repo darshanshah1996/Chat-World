@@ -1,0 +1,187 @@
+p{
+	margin: 0px;
+	padding: 0px;
+}
+.chatArea{
+	
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	
+	
+}
+.chatArea__message{
+	width: 100%;
+    flex: 1;
+	
+	position: relative;
+	padding: 0.5em 0.5em;
+overflow-y: scroll;
+     -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+      scrollbar-width: none !important;
+      overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    
+
+}
+.chatAreaHide
+{
+	display: none;
+}
+.chatArea__message::-webkit-scrollbar {
+	display: none;
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    
+}
+.chatArea__input{
+	width: 100%;
+   padding: 0.25em 0.25em;
+	
+	display: flex;
+
+	/*background: rgba(153,153,153,0.3);*/
+  align-items: center;
+ 
+  background: #f2f2f0; 
+
+	justify-content: space-between;
+}
+.chatArea__input--wrapper
+{
+  flex: 1;
+  display: flex;
+
+}
+.chatArea__input--submit{
+	border:transparent;
+	color: white;
+	outline: none;
+	background:#0000ff;
+	font-size: 1.3rem;
+	padding: 0.2em 0.5em 0.2em 0.3em;
+	border-radius: 10px;
+    margin-left: 1.2em;
+	
+}
+
+.chatArea__input--text{
+	flex: 1;
+    outline: none;
+    border:1px solid gray;
+	padding: 0em 0.8em; 
+	outline: none;
+	border-radius: 20px;
+}
+.messages{
+	border:1px solid gray;
+    max-width: 150px;
+    word-break: break-word;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    padding: 0.25em 0.5em; 
+    border-radius: 10px;
+    
+ 
+}
+.messageUser
+{
+	margin-left: auto !important;
+ margin-right: 0.5em;
+	background: rgba(230,230,230,0.5);
+
+}
+
+.message__imessage{
+	
+	font-size: 0.8rem;
+
+}
+.message__timestamp{
+	font-size: 0.6rem;
+	text-align: right;
+}
+
+.loadingSpinner{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	
+}
+
+
+.emojiDisp {
+  background: transparent;
+  border: transparent;
+  outline: none;
+  cursor: pointer;
+  
+  font-size: 1.2rem;
+  position: relative;
+
+}
+.emojiList {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(30px,55px));
+  overflow: auto;
+   background-color: white;
+  grid-gap: 0.1em;
+  grid-row-gap: 0.05em;
+  width: 35vw;
+  height: 45vw;
+  max-width: 150px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -105%);
+ 
+    
+ 
+}
+.emojiDisp:hover
+,.emojiList:hover
+{
+	opacity: 1 !important;
+}
+
+
+.emojiList p {
+
+  font-size: 2rem;
+  cursor: pointer;
+}
+@media (min-width: 900px)
+{
+
+	.chatArea__input
+	{
+		padding: 0.5em 1.2em;
+	}
+  .chatArea__input--text
+  {
+  	max-width: 70%;
+   
+  }
+  .messages{
+  	max-width: 200px !important;
+
+  }
+  .emojiList
+  {
+  	width: 25vw;
+  	height: 17vw;
+  	max-width: 250px;
+  }
+  .message__imessage{
+  	
+  	font-size: 1rem !important;
+  }
+ 
+
+}

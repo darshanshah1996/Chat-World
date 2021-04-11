@@ -1,0 +1,31 @@
+<div class="loginCard__userlogin" >
+
+       <h5 class="loginCard__header">REGISTER</h5>
+       <form class="loginCard__userlogin--form" (ngSubmit)="registerSubmit(register)" #register=ngForm>
+       	<label class="loginCard__name--label">Name</label>
+		<input type="text" class="loginCard__name" autocomplete="off" ngModel name="name" required  #name=ngModel
+		[ngClass]="{'warning':name.touched && name.invalid}">
+		<p class="warningMessage" *ngIf="name.touched && name.invalid">Name  required</p>
+		<label class="loginCard__gender--label">Gender</label>
+		<div class="loginCard__genderWrapper">
+          <span ><input type="radio" name="gender" value="Male" ngModel #gender="ngModel" required  [(ngModel)]="genderDefault"> Male</span>    
+          <span><input type="radio" name="gender" value="Female" ngModel #gender="ngModel" required [(ngModel)]="genderDefault"> Female</span>   
+        </div>
+		
+		<label class="loginCard__username--label">Email</label>
+		<input type="text" class="loginCard__username" autocomplete="off" ngModel name="username" required email #username=ngModel
+		[ngClass]="{'warning':username.touched && username.invalid}">
+		<p class="warningMessage" *ngIf="username.touched && username.invalid">Valid Email required</p>
+		<label class="loginCard__password--label" >Password</label>
+		<input type="password" autocomplete="off" class="loginCard__password" required  ngModel name="password" #password="ngModel" [ngClass]="{'warning':password.touched && password.invalid}"  minlength="5" maxlength="10">
+		<p class="warningMessage" *ngIf="password.touched && password.invalid && password.errors.required" >Password required</p>
+		<p class="warningMessage" *ngIf="password.touched && password.invalid && (password.errors.minlength || password.errors.maxlength)" >Password must be bewteen 5 to 10 chars</p>
+		<label class="loginCard__image--label">Avatar(Optional-PNG,JPEG,JPG Images)</label>
+		<input type="file" id="file" class="avtarImage" name="imageUpload" accept="image/png,image/jpeg,image/jpg"  (change)="saveImage($event.target.files)" #imageUpload>
+		  <img src="{{file}}" *ngIf="file" class="imagePreview">
+		  
+        <button class="loginSubmit" [disabled]="register.invalid" type="submit">Register</button> 
+      
+
+              </form>
+        </div>

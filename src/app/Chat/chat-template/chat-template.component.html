@@ -1,0 +1,15 @@
+<div class="chatTemplate" [ngClass]="{'chatTemplateBlog':!chatAreaStatus}">
+	<app-user-list [ngClass]="{'hideSection':!chatAreaStatus}"></app-user-list >
+	
+	<app-chat-header [ngClass]="{'hideSection':!chatAreaStatus}"></app-chat-header >
+	<app-blog-area [ngClass]="{'hideSection':chatAreaStatus}"></app-blog-area >
+
+	<app-user-profile></app-user-profile>
+	
+	
+	<!--<button class="logout" (click)="Logout()">Logout</button>-->
+    
+
+</div>
+<app-warning *ngIf="warningMessage" [warningMessage]="warningMessage"></app-warning>
+

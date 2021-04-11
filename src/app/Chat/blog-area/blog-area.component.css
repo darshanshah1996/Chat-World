@@ -1,0 +1,272 @@
+img{
+	display: block;
+	max-width: 100%;
+
+}
+
+.loadingSpinner{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.blog{
+	width: 100%;
+	height: 100% ;
+	
+	background-color: rgba(240,240,240,0.4);
+}
+.blog__header
+{
+ 
+  padding: 0.5em 0.5em;
+  position: relative;
+
+   height: 10%;
+ background-color:#f2f2f2;
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+}
+
+.blogScreen
+{
+ height: 90%;
+ width: 100%;
+
+ display: flex;
+
+
+ 
+}
+.blog__header--profile{
+	width: 70px;
+	height: 50px;
+
+	outline: none;
+	cursor: pointer;
+	border: transparent;
+	background: transparent;
+    margin-top:0px;
+    margin-bottom: 0px; 
+    margin-right: 0.25em;
+	padding: 0px;
+}
+.blog__header--profile--image{
+	width: 100%;
+	height: 100%;
+    border-radius: 50%;
+	
+}
+.blogArea__wrapper{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: 100%;
+
+	width: 100%;
+	
+}
+
+.blogArea{
+		flex: 1;
+	
+	padding: 1.5em 1.5em;
+	overflow: auto;
+	 -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+      scrollbar-width: none !important;
+      overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+.blogArea::-webkit-scrollbar {
+	display: none;
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    
+}
+.blogAreaInput{
+	
+	
+	padding: 0.5em 0.5em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f2f2f2;
+
+}
+.blogArea__Input--wrapper
+{
+	display: flex;
+	flex: 1;
+}
+.blogAreaInput--text{
+	border-radius: 20px;
+	outline: none;
+	border: transparent;
+	padding: 0.25em 1em;
+	flex: 1;
+	max-width: 500px;
+	border: 1px solid lightgray;
+
+}
+.blogInfo{
+	display: none;
+	width: 22%;
+	background: #EAF4F9;
+	font-family: 'Montserrat', sans-serif;
+	padding: 1.5em 1.5em;
+}
+.blogArea__input--submit
+{
+	outline: none;
+	border: transparent;
+	cursor: pointer;
+	color: white;
+	font-size: 1.3rem;
+	padding: 0.2em 0.5em 0.2em 0.3em;
+	border-radius: 10px;
+	margin-left: 1.5em;
+	background:#0000ff;
+}
+.blogs__header{
+	height: 30px;
+	padding: 0.25em 0.25em;
+	
+	position: relative;
+	display: flex;
+	background-color: rgba(179, 179, 179,0.7);
+
+	
+}
+.blogs__body{
+	padding: 0.5em 0.5em;
+	background-color:rgba(179, 179, 179,0.2);
+}
+.blogs__body p{
+	margin: 0px;
+
+	padding: 0px;
+}
+.blogs__header--image{
+	width: 40px;
+	height:40px;
+	border-radius: 50%; 
+	position: absolute;
+    bottom: 0%;
+    left:1%;
+}
+.blogs__image{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	
+}
+.blogs__header--name{
+	padding: 0px;
+	margin-left: 50px;
+}
+
+.blogs__body--message
+{
+	font-size: 1.2rem;
+}
+.blogs__body--time{
+	font-size: 0.8rem;
+	text-align: right;
+}
+.blogs
+{
+	display: flex;
+	align-items: flex-start;
+
+}
+.blogs__body--Name{
+	font-weight: bold;
+}
+.blogs__body--timestamp
+{
+	font-weight: lighter !important;
+	color: lightgray;
+	margin-left: 0.15em;
+}
+.blogs__bodyWrapper
+{
+margin-left: 0.5em;	
+  background-color: white;
+  flex: 1;
+  padding: 0.5em 0.5em;
+  border-left: 3px solid grey;
+}
+.blogs+.blogs{
+	margin-top: 1em;
+}
+.emojiDisp {
+  background: transparent;
+  border: transparent;
+  outline: none;
+  cursor: pointer;
+  
+  font-size: 1.2rem;
+  position: relative;
+  
+}
+.emojiList {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(30px,55px));
+  overflow: auto;
+   background-color: white;
+  grid-gap: 0.1em;
+  grid-row-gap: 0.05em;
+  width: 35vw;
+  height: 45vw;
+  max-width: 150px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -105%);
+ 
+    
+ 
+}
+.emojiDisp:hover
+,.emojiList:hover
+{
+	opacity: 1 !important;
+}
+
+
+.emojiList p {
+
+  font-size: 2rem;
+  cursor: pointer;
+}
+@media (min-width: 900px)
+{
+
+   .blog{
+   	max-height: 100vh;
+   }
+
+	 .blog__header{
+  	display: none !important;
+  }
+ 
+  .blogArea__wrapper{
+  height: 100%;
+  }
+
+  .blogScreen
+  {
+  	height: 100% !important;
+  }
+  .blogInfo{
+  	display: block;
+  }
+  .blogs{
+  	max-width: 70%;
+  }
+}

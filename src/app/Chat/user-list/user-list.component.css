@@ -1,0 +1,192 @@
+
+img{
+ max-width: 100%;
+ display: block;	
+}
+p{
+	margin: 0px;
+	padding: 0px;
+}
+.userlist{
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	width: 50%;
+	height: 100%;
+	
+	background-color: #EAF4F9;
+	
+	font-family: 'Montserrat', sans-serif;
+	overflow: auto;
+
+
+}
+
+/*font-family: 'Roboto', sans-serif;*/
+
+.userlist__heading{
+	margin-bottom: 3.5em; 
+}
+
+.userlist--search{
+	margin-top: 1.5em;
+	width: 95%;
+	padding: 0.25em 1.4em 0.25em 0.5em;
+	outline: none;
+	border: transparent;
+   
+}
+
+.userlist--searchWrapper{
+	position: relative;
+}
+.fa-search{
+	position: absolute;
+	top: 0;
+	right: 5%;
+	color:  #595959;
+}
+.user{
+	display: grid;
+	grid-template-columns: 50px auto;
+	align-items: center;
+	position: relative;
+	
+	margin-top: 0.5em;
+}
+.SearchWrapper__searchResult{
+	position: absolute;
+	width: 100%;
+	height: 150px;
+	background-color: white;
+	z-index: 5;
+	overflow: auto;
+	opacity: 0.9;
+
+
+}
+
+.userlist--search{
+	text-align: left;
+}
+.userlist__info--wrapper{
+	margin-left: 0.85em ;
+	padding: 0px;
+	font-size: 0.9rem;
+	word-break: break-word;
+	align-self: center;
+
+}
+
+.userlist__user--status{
+	
+	font-size: 0.7em;
+    color: green;
+
+}
+.userImage__wrapper{
+	width: 100%;
+    height: 100%;
+
+    position: relative;
+  
+}
+
+.userImage__wrapper--mark{
+width: 10px;
+height: 10px;
+position: absolute;
+border-radius: 50%;
+
+
+opacity: 0.8;
+right: 1px;
+bottom: 3px;
+}
+.user__message{
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color:#3366ff;
+	top: 0;
+	right: 0;
+	
+
+}
+.userImage__wrapper>img{
+	width: 100%  ;
+	height: 100%;
+  border-radius: 25px;
+}
+.userImage__wrapper--search{
+	width: 40px;
+	height: 40px;
+	border-radius: 15px;
+}
+.SearchWrapper__User{
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: 40px auto;
+	padding: 0em 0.6em;
+	justify-content: space-between;
+	align-items: center;
+}
+.SearchWrapper__User+.SearchWrapper__User
+{
+	margin-top: 0.25em;
+}
+.SearchWrapper__User--warning{
+	text-align: center;
+	margin-top: 0.35em;
+}
+.userlist__wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 2em 1em;
+
+	margin: 0px;
+
+}
+.userlist--users{
+	cursor: pointer;
+
+}
+.userlist--users:hover
+{
+	opacity: 0.8;
+}
+.closeuserList{
+	position: absolute;
+	top: 0.25em;
+	right: 0.3em;
+	color:#666666;
+	outline: none;
+	border: transparent;
+	background: transparent;
+
+}
+.closeUserList
+{
+	/*transform: translateX(-100%);*/
+	display: none;
+}
+
+.online{
+	background-color: #33ff33;
+}
+.offline{
+	background-color: #ffcb0c ;
+}
+
+@media (min-width: 900px)
+{
+	.userlist{
+		position: relative;
+		width: 100% !important;
+		display: block !important;
+	}
+	.closeuserList{
+		display: none !important;	}
+}

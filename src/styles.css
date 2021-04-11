@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+*,::before,::after{
+	box-sizing: border-box !important;
+}
+
+button{
+	outline: none !important;
+	 cursor: pointer;
+
+
+}
+button:hover{
+	opacity: 0.8 ;
+}
+
+li{
+	outline: none;
+}
+
+html
+{
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	position: relative;
+	height: -webkit-fill-available;
+}
+h1,h2,h3,h4,h5,h6,p,li
+{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	position: relative;
+	height: -webkit-fill-available;
+	width: 100%;
+
+	
+
+
+}

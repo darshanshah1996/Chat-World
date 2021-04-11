@@ -1,0 +1,132 @@
+img{
+	max-width: 100%;
+	display: block;
+}
+
+.chatHeader
+{
+	padding: 0px;
+	margin:0px;
+	width: 100%;
+	height: 100%;
+	/*100vh !important;*/;
+	
+	
+	opacity: 0.7;
+
+}
+.chatHeader__wrapper
+{
+	height: 10% ;
+	
+	padding: 0.5em 0em;
+	display: flex;
+	align-items: center;
+	background-color:#f2f2f2;
+	justify-content: space-between;
+}
+.chatArea__wrapper
+{
+	width: 100%;
+	height: 90%;
+
+}
+.chatHeader--User
+{
+	padding: 0px;
+	margin: 0px;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+.chatHeader__userList
+{
+	margin-left: 0.25em;
+	position: relative;
+	outline: none;
+	border-radius: 0.25em;
+	border: transparent;
+	background: transparent;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	
+}
+.chatHeader__userList--messageAlert
+{
+	position: absolute;
+	width: 7px;
+	height: 7px;
+background-color: blue;
+top: 5px;
+right: 5px;
+border-radius: 50%;
+}
+.chatHeader__userList i
+{
+	font-size: 1.5em;
+}
+.userImage{
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+	padding: 0.15em 0em;
+
+}
+.chatHeader__userProfile{
+	border: transparent;
+
+	outline: none;
+	background: transparent;
+	margin-right: 0.5em;
+}
+
+.chatAreaDisplay{
+	display: none !important;
+}
+.chatHeader__chatWithUser--ProfileImage
+{
+	display: none;
+}
+
+@media (min-width: 900px)
+{
+.chatHeader
+{
+	height: 100%;
+	max-height: 100vh;
+}	
+  .chatHeader__userList{
+  	display: none;
+  }	
+  .chatHeader__userProfile{
+  	display: none;
+  }
+  .chatHeader--User{
+  	margin-left: 1.5em;
+  }
+  .chatHeader__wrapper{
+  	height: 8% ;
+  }
+  .chatArea__wrapper{
+  	height: 92%;
+  }
+.chatHeader__chatWithUser--wrapper
+{
+	display: flex;
+	align-items: center;
+	margin-left: 0.5em;
+
+}
+  .chatHeader__chatWithUser--ProfileImage
+  {
+  	display: block;
+  	width: 40px;
+  	height: 40px;
+  	border-radius: 50%;
+  }
+.chatHeader--User
+{
+	margin-left: 0.15em;
+}
+
+}

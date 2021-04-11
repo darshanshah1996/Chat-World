@@ -1,0 +1,46 @@
+<div class="userlist" [ngClass]="{'closeUserList':closeUserList}">
+	<div class="userlist__wrapper">
+	<div class="userlist__heading">
+	<h2 class="userlist--heading">Chats</h2>
+	<span class="userlist--searchWrapper">
+		<input class="userlist--search" type="text" placeholder="Search User" [(ngModel)]="userSearch" (input)="searchUser()">
+		<i class="fas fa-search"></i>
+		<div class="SearchWrapper__searchResult" *ngIf=" userSearch && userSearch.length>=3">
+        <app-loading-specific  *ngIf="loadingIndicator" [spinnerColor]="spinnerColor"
+        [spinnerClass]="'ldio-q9tbp963vv'"></app-loading-specific>
+         <ng-container *ngIf="userSearchData">  
+			<div class="SearchWrapper__User" *ngFor="let user of userSearchData;let i=index" (click)="getUser(i)">
+				  <div class="userImage__wrapper--search">
+		  	      <img src="{{user['url']}}" class="userlist__user--image" alt="">
+		  	   </div>  
+		     	<p  class="userlist__user--name">{{user['Name']}}</p>
+			</div>
+		</ng-container>
+		<p  class="SearchWrapper__User--warning" *ngIf="noSearch">No user found</p>
+			
+		</div>
+	</span>
+
+	
+	</div>
+	<hr class="userlist--seperator">
+	<div class="userlist--users" *ngFor="let user of userData;let i=index" (click)="chatWithUser(i)"> 
+		  <div class="user">
+		  	   <div class="userImage__wrapper">
+		  	      <img src="{{user['url']}}" class="userlist__user--image" alt="">
+		  	      <div class="userImage__wrapper--mark" [ngClass]="{'online':userStatus[user['email']],'offline':!userStatus[user['email']]}"  
+		  	       title="{{userStatus[user['email']]?'Online':'Offline'}}"></div>
+		  	       
+		  	   </div>  
+		  	   <div class="userlist__info--wrapper">
+		     	<p  class="userlist__user--name">{{user['Name']}}</p>
+		     
+		     	</div>
+		     	<div class="user__message" title="New Message" *ngIf="user['NewMessage']">
+		  	       	
+		  	       </div>
+		  </div>
+	</div>
+	<button class="closeuserList" (click)="closeList()">X</button>
+	</div>
+</div>

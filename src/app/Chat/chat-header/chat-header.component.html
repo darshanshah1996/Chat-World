@@ -1,0 +1,16 @@
+<div class="chatHeader">
+	<div class="chatHeader__wrapper">
+		<button class="chatHeader__userList" (click)="getUserList()" title="UserList"><i class="fas fa-users"></i>
+			<div *ngIf="notificationUpdate" class="chatHeader__userList--messageAlert"></div>
+		</button>
+		<div class="chatHeader__chatWithUser--wrapper" *ngIf="chatWithUser">
+		<img src="{{chatWithUserProfile}}" alt="chat with user profile image" class="chatHeader__chatWithUser--ProfileImage">
+		<p class="chatHeader--User" >{{chatWithUser}}</p>
+		</div>
+		<button class="chatHeader__userProfile" (click)="getUserProilfe()"><img src="{{userImageURL}}" class="userImage" ></button>
+	</div>
+	<div class="chatArea__wrapper">
+		<app-chat-area [ngClass]="{'chatAreaDisplay':!chatWithUser}"></app-chat-area>
+		<app-chat-help *ngIf="!chatWithUser"></app-chat-help>
+	</div>
+</div>

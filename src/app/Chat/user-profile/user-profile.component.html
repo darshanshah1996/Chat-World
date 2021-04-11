@@ -1,0 +1,16 @@
+<div class="userProfile" [ngClass]="{'userProfileDisplay':userProfileDisplay}">
+	<div class="userProfileWrapper">
+		<div class="userDetail">
+			<img src="{{userImageURL}}" class="userImage">
+			<p class="userDetail__userName">Hi {{user}}</p>
+		</div>
+		<hr class="userDetail--seperator">
+		<div class="userProfileOptions">
+			<button class="options userProfileOptions--blog" (click)="blogDisplay()">Blog<i class="fab fa-blogger"></i></button>
+			<button class="options userProfileOptions--Chat" (click)="chatDisplay()">Chat<i class="far fa-comments"></i></button>
+			
+			<button class="options userProfileOptions--logout" (click)="logOut()">Logout<i class="fas fa-sign-out-alt"></i></button>
+		</div>
+		<button class="closeUserProfile" (click)="closeUserProfile()">X</button>
+	</div>
+</div>

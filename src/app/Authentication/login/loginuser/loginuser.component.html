@@ -1,0 +1,18 @@
+       <div class="loginCard__userlogin" >
+
+       <h5 class="loginCard__header">LOGIN</h5>
+       <form class="loginCard__userlogin--form" (ngSubmit)="loginSubmit(login)" #login=ngForm>
+		<label class="loginCard__username--label">Email</label>
+		<input type="text" class="loginCard__username" autocomplete="off" ngModel name="username" required email #username=ngModel
+		[ngClass]="{'warning':username.touched && username.invalid}">
+		<p class="warningMessage" *ngIf="username.touched && username.invalid">Valid Email required</p>
+		<label class="loginCard__password--label" >Password</label>
+		<input type="password" autocomplete="off" class="loginCard__password" required  ngModel name="password" #password="ngModel" [ngClass]="{'warning':password.touched && password.invalid}">
+		<p class="warningMessage" *ngIf="password.touched && password.invalid && password.errors.required" >Password required</p>
+
+		<li routerLink="/register" class="loginCard__header--registerlink">New Here?Register Now</li>
+        <button class="loginSubmit" type="submit" [disabled]="login.invalid">Login</button> 
+
+              </form>
+         <li routerLink="/reset" class="loginCard__header--reset" >Reset Password</li>     
+        </div>
