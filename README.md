@@ -11,7 +11,7 @@ To set up chat server visit repository:-https://github.com/darshanshah1996/ChatS
 Steps
 1.Start the chat server
 2.Fill the environment files details
-3.Using the angular cli run the  prokect using ng serve
+3.Using the angular cli run the  project using ng serve
 
 
 
